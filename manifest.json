@@ -1,7 +1,7 @@
 {
-  "id": "dev.replugged.PluginTemplate",
-  "name": "Plugin Template",
-  "description": "A plugin template",
+  "id": "eu.shadygoat.Latex",
+  "name": "Latex",
+  "description": "A plugin that adds latex to discord",
   "author": {
     "name": "replugged",
     "discordID": "1000992611840049192",
@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "type": "replugged-plugin",
-  "renderer": "src/index.ts",
+  "renderer": "src/index.tsx",
   "source": "https://github.com/replugged-org/plugin-template",
-  "image": ["https://i.imgur.com/14CNs3a.png?CHANGE-THIS-URL"]
+  "image": ["https://cdn.discordapp.com/attachments/735886276070342696/1164412779931897866/QznwHsj.png"]
 }

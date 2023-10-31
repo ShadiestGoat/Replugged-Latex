@@ -31,7 +31,13 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.0.3",
-    "replugged": "^4.6.2",
-    "typescript": "^5.2.2"
+    "replugged": "^4.7.4",
+    "simple-markdown": "^0.7.3",
+    "typescript": "^5.2.2",
+    "@types/katex": "^0.16.5"
+  },
+  "dependencies": {
+    "html-to-react": "^1.7.0",
+    "katex": "^0.16.9"
   }
 }

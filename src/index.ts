@@ -1,24 +1,54 @@
-import { Injector, Logger, webpack } from "replugged";
+import { Injector, common } from "replugged";
+import katex from 'katex';
+import "katex/dist/katex.min.css"
+import { Parser as htmlParserFactory } from "html-to-react"
+import type SimpleMarkdown from "simple-markdown"
+
+const { parser } = common;
 
 const inject = new Injector();
-const logger = Logger.plugin("PluginTemplate");
 
-export async function start(): Promise<void> {
-  const typingMod = await webpack.waitForModule<{
-    startTyping: (channelId: string) => void;
-  }>(webpack.filters.byProps("startTyping"));
-  const getChannelMod = await webpack.waitForModule<{
-    getChannel: (id: string) => {
-      name: string;
-    };
-  }>(webpack.filters.byProps("getChannel"));
+export function start(): void {
+  const htmlParser = htmlParserFactory({});
 
-  if (typingMod && getChannelMod) {
-    inject.instead(typingMod, "startTyping", ([channel]) => {
-      const channelObj = getChannelMod.getChannel(channel);
-      logger.log(`Typing prevented! Channel: #${channelObj?.name ?? "unknown"} (${channel}).`);
-    });
-  }
+  inject.after(parser, "parse", (args) => {
+    return parser.reactParserFor({
+      latex: {
+        order: 23,
+        match(source) {
+          let reg = /^\$(.+?)\$/
+          if (source.startsWith("$$")) {
+            reg = /^\$\$(.+?)\$\$/s
+          }
+
+          return reg.exec(source);
+        },
+        parse(capture) {
+          const content = capture[0]
+          let size = 1
+          if (content.startsWith("$$")) {
+            size = 2
+          }
+
+          return {
+            content: capture[0].slice(size, -size),
+            type: `latex`,
+            inline: size == 1
+          };
+        },
+        react(node: { content: string, inline: boolean }) {
+          const html = katex.renderToString(node.content, {
+            output: "html",
+            displayMode: !node.inline,
+            throwOnError: false,
+          })
+
+          return htmlParser.parse(html)
+        },
+      } as SimpleMarkdown.ParserRule,
+      ...parser.defaultRules,
+    })(...args);
+  });
 }
 
 export function stop(): void {
