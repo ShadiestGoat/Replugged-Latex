@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "type": "replugged-plugin",
-  "renderer": "src/index.tsx",
+  "renderer": "src/index.ts",
   "source": "https://github.com/replugged-org/plugin-template",
   "image": ["https://cdn.discordapp.com/attachments/735886276070342696/1164412779931897866/QznwHsj.png"]
 }
