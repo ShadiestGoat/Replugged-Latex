@@ -23,18 +23,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.6.1",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
-    "eslint": "^8.49.0",
+    "@types/katex": "^0.16.7",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
     "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.3",
-    "replugged": "^4.7.4",
+    "prettier": "^3.1.1",
+    "replugged": "^4.7.7",
     "simple-markdown": "^0.7.3",
-    "typescript": "^5.2.2",
-    "@types/katex": "^0.16.5"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "html-to-react": "^1.7.0",
