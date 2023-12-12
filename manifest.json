@@ -7,7 +7,7 @@
     "discordID": "376079696489742338",
     "github": "ShadiestGoat"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updater": {
     "type": "store",
     "id": "eu.shadygoat.Latex"
@@ -16,5 +16,7 @@
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
   "source": "https://github.com/ShadiestGoat/Replugged-Latex",
-  "image": ["https://raw.githubusercontent.com/ShadiestGoat/Replugged-Latex/main/cover.png"]
+  "image": [
+    "https://raw.githubusercontent.com/ShadiestGoat/Replugged-Latex/main/cover.png"
+  ]
 }
