@@ -3,18 +3,18 @@
   "name": "Latex",
   "description": "A plugin that adds latex to discord",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "Lucy Dryaeva",
+    "discordID": "376079696489742338",
+    "github": "ShadiestGoat"
   },
   "version": "1.0.0",
   "updater": {
-    "type": "github",
-    "id": "replugged-org/plugin-template"
+    "type": "store",
+    "id": "eu.shadygoat.Latex"
   },
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/replugged-org/plugin-template",
-  "image": ["https://cdn.discordapp.com/attachments/735886276070342696/1164412779931897866/QznwHsj.png"]
+  "source": "https://github.com/ShadiestGoat/Replugged-Latex",
+  "image": ["https://raw.githubusercontent.com/ShadiestGoat/Replugged-Latex/main/cover.png"]
 }
